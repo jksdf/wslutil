@@ -7,8 +7,10 @@ function winstart() {
     return;
   fi
   local call
+  local winfile
   for file in "$@"; do
-    call+="start \"\" \"${file}\"\n"
+    winfile=$(winpath "$file")
+    call+="start \"\" \"$winfile\"\n"
   done
   echo -e "$call" | cmd.exe > /dev/null
 }
