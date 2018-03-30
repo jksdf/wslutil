@@ -10,5 +10,5 @@ function winstart() {
   for file in "$@"; do
     call+="start \"\" \"${file}\"\n"
   done
-  echo -e "$call" | cmd.exe >2 /dev/null
+  echo -e "$call" | cmd.exe > /dev/null
 }
